@@ -6,28 +6,29 @@ import org.junit.Assert;
 public class UserRegistrationTest {
 
     @Test
-    public void giveFirstName_WhenProper_ShouldReturnTrue() {
+    public void givenName_WhenProper_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateFirstName("Shreya");
+        boolean result = userRegistration.validateName("Shreya");
         Assert.assertTrue(result);
     }
 
     @Test
-    public void giveFirstName_WhenNotProper_ShouldReturnFalse() {
+    public void giveName_WhenNotProper_ShouldReturnFalse() {
         UserRegistration userValidation = new UserRegistration();
-        boolean result = userValidation.validateFirstName("Sh");
+        boolean result = userValidation.validateName("Sh");
         Assert.assertFalse(result);
     }
     @Test
-    public void givenLastName_WhenProper_ShouldReturnTrue(){
+    public void giveEmailID_WhenProper_ShouldReturnTrue() {
         UserRegistration userRegistration = new UserRegistration();
-        boolean result = userRegistration.validateLastName("Swaroop");
+        boolean result = userRegistration.validateEmailID("shreyaswrp@gmail.com");
         Assert.assertTrue(result);
     }
+
     @Test
-    public void giveLastName_WhenNotProper_ShouldReturnFalse() {
+    public void giveEmailID_WhenNotProper_ShouldReturnFalse() {
         UserRegistration userValidation = new UserRegistration();
-        boolean result = userValidation.validateLastName("Sw");
+        boolean result = userValidation.validateEmailID("shreyaswrpgmail.com");
         Assert.assertFalse(result);
     }
 }
