@@ -31,4 +31,17 @@ public class UserRegistrationTest {
         boolean result = userValidation.validateEmailID("shreyaswrpgmail.com");
         Assert.assertFalse(result);
     }
+    @Test
+    public void giveMobileNumber_WhenProper_ShouldReturnTrue() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateMobileNumber("91 89881597316");
+        Assert.assertTrue(result);
+    }
+
+    @Test
+    public void giveMobileNumber_WhenNotProper_ShouldReturnFalse() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean result = userRegistration.validateMobileNumber("91-8981597316");
+        Assert.assertFalse(result);
+    }
 }
